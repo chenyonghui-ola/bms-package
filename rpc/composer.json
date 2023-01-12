@@ -1,0 +1,24 @@
+{
+    "name": "package/rpc",
+    "description": "rpc-http",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "chen.yonghui1",
+            "email": "chen.yonghui1@olaola.chat"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "guzzlehttp/guzzle": "6.5.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Package\\Rpc\\": ""
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev"
+}
