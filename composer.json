@@ -14,10 +14,7 @@
     "autoload": {
         "psr-4": {
             "Package\\Support\\": ""
-        },
-        "files": [
-            "helpers.php"
-        ]
+        }
     },
     "config": {
         "sort-packages": true
