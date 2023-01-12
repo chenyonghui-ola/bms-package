@@ -443,7 +443,7 @@ if (!function_exists('dd')) {
      */
     function dd(...$args)
     {
-        if (PHP_SAPI != 'cli') {
+        if (PHP_SAPI == 'cli') {
             foreach ($args as $data) {
                 var_dump($data);
             }
@@ -1008,6 +1008,9 @@ if (!function_exists('with')) {
 if (!function_exists('fastcgi_finish_request')) {
     function fastcgi_finish_request()
     {
+        if (PHP_SAPI == 'cli') {
+            exit('不支持命令行使用');
+        }
         header("Connection: close\r\n");
         header("Content-Encoding: none\r\n");
         header("Content-Length: " . ob_get_length() . "\r\n");
@@ -1019,6 +1022,9 @@ if (!function_exists('fastcgi_finish_request')) {
 if (!function_exists('finish_request_response')) {
     function finish_request_response($data = [])
     {
+        if (PHP_SAPI == 'cli') {
+            exit('不支持命令行使用');
+        }
         echo json_encode([
             'success' => true,
             'code'    => 0,
